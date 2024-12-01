@@ -27,9 +27,7 @@ for i, num in enumerate(nums):
 left_side.sort()
 right_side.sort()
 
-for i in range(len(left_side)):
-    distance += abs(left_side[0] - right_side[0])
-    left_side.pop(0)
-    right_side.pop(0)
+for num in left_side:
+    distance += num * right_side.count(num)
 
 print(distance)
