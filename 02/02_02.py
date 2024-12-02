@@ -39,24 +39,25 @@ def check_line(line) -> None:
         if i == 0:
             previous_num = num
             continue
-        print(abs(num - previous_num))
+
         if num - previous_num < 0:
             is_negative = True
         if num - previous_num > 0:
             is_positive = True
-        if abs(num - previous_num) > 3:
+
+        if (
+            abs(num - previous_num) > 3 or
+            abs(num - previous_num) == 0 or
+            is_positive is True and is_negative is True
+        ):
+
             safe = False
             break
-        if abs(num - previous_num) == 0:
-            safe = False
-            break
-        if is_positive is True and is_negative is True:
-            safe = False
-            break
+
         previous_num = num
+
     return safe
 
 
 if __name__ == "__main__":
     main()
-
