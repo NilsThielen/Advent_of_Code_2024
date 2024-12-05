@@ -112,6 +112,7 @@ def add_matricies(left, right):
 
     return sum_matrix
 
+
 def count_full_crosses(counts):
     amt = 0
     for line in counts:
